@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Playfair Display", "Georgia", "Times New Roman", serif;
+  --font-sans: "Jost", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  /* Wine / Plum (card top) */
+  --color-maroon-700: #7a2a52;
+  --color-maroon-800: #5f1a3e;
+  --color-maroon-900: #4a0f2f;
+  --color-maroon-950: #340820;
+
+  /* Dusty rose pink (card bottom) */
+  --color-blush-50: #fbeef1;
+  --color-blush-100: #f4d9e0;
+  --color-blush-200: #e9bccb;
+  --color-blush-300: #d99aaf;
+
+  /* Rose gold (card lettering) */
+  --color-gold-300: #f0cdb0;
+  --color-gold-500: #d6a07c;
+  --color-gold-700: #9a5f3f;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-maroon-950 antialiased;
+    background: linear-gradient(180deg, #4a0f2f 0%, #6e2349 30%, #b86b8a 65%, #f1d3dc 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+  a:focus-visible {
+    outline: 2px solid var(--color-gold-300);
+    outline-offset: 4px;
+  }
+  ::selection {
+    background: #d6a07c;
+    color: #340820;
+  }
+}
+
+@utility text-rosegold {
+  background-image: linear-gradient(110deg, #f6dcc4 0%, #d6a07c 45%, #b9785a 60%, #f0cdb0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
