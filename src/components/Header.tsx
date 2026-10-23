@@ -20,7 +20,7 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Book via WhatsApp"
-            className="inline-flex min-h-11 items-center text-sm text-gold-300 underline decoration-gold-500/50 underline-offset-4 transition-colors hover:text-blush-200"
+            className="inline-flex min-h-10 items-center rounded-full border border-gold-300 bg-gradient-to-r from-gold-300 via-gold-500 to-gold-300 px-4 text-sm font-bold text-maroon-950 shadow-md shadow-maroon-950/40 transition hover:-translate-y-0.5 hover:brightness-105"
           >
             WhatsApp
           </a>

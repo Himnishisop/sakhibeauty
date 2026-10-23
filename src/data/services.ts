@@ -1,7 +1,7 @@
 export type MenuItem = {
   name: string;
   note?: string;
-  price?: string;
+  price: string;
 };
 
 export type MenuGroup = {
@@ -9,11 +9,20 @@ export type MenuGroup = {
   items: MenuItem[];
 };
 
+export type WaxRow = {
+  service: string;
+  note?: string;
+  aloeVera: string;
+  whiteChocolate: string;
+  rica: string;
+};
+
 export type ServiceSectionData = {
   id: string;
   number: string;
   title: string;
-  groups: MenuGroup[];
+  groups?: MenuGroup[];
+  waxTable?: WaxRow[];
 };
 
 export const SERVICE_SECTIONS: ServiceSectionData[] = [
@@ -58,12 +67,11 @@ export const SERVICE_SECTIONS: ServiceSectionData[] = [
     ],
   },
   {
-    id: "facial-waxing",
+    id: "facial",
     number: "2",
-    title: "Facial & Waxing",
+    title: "Facial",
     groups: [
       {
-        title: "Facial",
         items: [
           { name: "Fruit", price: "₹500" },
           { name: "Gold", price: "₹600" },
@@ -71,47 +79,29 @@ export const SERVICE_SECTIONS: ServiceSectionData[] = [
           { name: "Aroma", price: "₹800" },
         ],
       },
+    ],
+  },
+  {
+    id: "waxing",
+    number: "3",
+    title: "Waxing",
+    waxTable: [
+      { service: "Full Hands", aloeVera: "₹200", whiteChocolate: "₹300", rica: "₹400" },
+      { service: "Half Legs", aloeVera: "₹200", whiteChocolate: "₹300", rica: "₹400" },
+      { service: "Full Legs", aloeVera: "₹400", whiteChocolate: "₹600", rica: "₹700" },
+      { service: "Underarms", aloeVera: "₹50", whiteChocolate: "₹50", rica: "₹80" },
       {
-        title: "Waxing – Full Hands",
-        items: [
-          { name: "Full Hands (Aloe Vera)", price: "₹200" },
-          { name: "Full Hands (White Chocolate)", price: "₹300" },
-          { name: "Full Hands (Rica)", price: "₹400" },
-        ],
-      },
-      {
-        title: "Waxing – Underarms",
-        items: [{ name: "Underarms", price: "₹50" }],
-      },
-      {
-        title: "Waxing – Half Legs",
-        items: [
-          { name: "Half Legs (Aloe Vera)", price: "₹200" },
-          { name: "Half Legs (White Chocolate)", price: "₹300" },
-          { name: "Half Legs (Rica)", price: "₹400" },
-        ],
-      },
-      {
-        title: "Waxing – Full Legs",
-        items: [
-          { name: "Full Legs (Aloe Vera)", price: "₹400" },
-          { name: "Full Legs (White Chocolate)", price: "₹600" },
-          { name: "Full Legs (Rica)", price: "₹700" },
-        ],
-      },
-      {
-        title: "Waxing – Hands, Legs & Underarms",
-        items: [
-          { name: "Hands, Legs & Underarms (Aloe Vera)", price: "₹600" },
-          { name: "Hands, Legs & Underarms (White Chocolate)", price: "₹900" },
-          { name: "Hands, Legs & Underarms (Rica)", price: "₹1100" },
-        ],
+        service: "Combo",
+        note: "Full Hands + Full Legs + Underarms",
+        aloeVera: "₹600",
+        whiteChocolate: "₹900",
+        rica: "₹1100",
       },
     ],
   },
   {
     id: "massage-hair",
-    number: "3",
+    number: "4",
     title: "Massage & Hair Treatment",
     groups: [
       {
@@ -147,7 +137,7 @@ export const SERVICE_SECTIONS: ServiceSectionData[] = [
   },
   {
     id: "spa-mani-pedi",
-    number: "4",
+    number: "5",
     title: "Hair Spa, Manicure & Pedicure",
     groups: [
       {

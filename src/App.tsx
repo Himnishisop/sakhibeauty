@@ -1,7 +1,7 @@
 import Header from "./components/Header";
 import ServiceSection from "./components/ServiceSection";
 import { SERVICE_SECTIONS } from "./data/services";
-import { ADDRESS } from "./data/site";
+import { ADDRESS, BRAND, waLink } from "./data/site";
 
 export default function App() {
   return (
@@ -29,6 +29,17 @@ export default function App() {
             </p>
           </div>
           <address className="mt-5 text-sm not-italic text-blush-100 sm:text-base">{ADDRESS}</address>
+          <p className="mt-2 text-sm font-bold uppercase tracking-[0.12em] text-gold-300 sm:text-base">
+            <span className="mx-2 text-gold-500">✦</span>Only for Ladies<span className="mx-2 text-gold-500">✦</span>
+          </p>
+          <a
+            href={waLink(`Hello ${BRAND}, I would like to book an appointment.`)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex min-h-14 items-center justify-center gap-2.5 rounded-full border border-gold-300 bg-gradient-to-r from-gold-300 via-gold-500 to-gold-300 px-8 py-3 text-lg font-bold tracking-wide text-maroon-950 shadow-lg shadow-maroon-950/40 transition hover:-translate-y-0.5 hover:brightness-105"
+          >
+            Book on WhatsApp
+          </a>
         </div>
 
         <div className="mt-8 space-y-5">

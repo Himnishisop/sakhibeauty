@@ -1,7 +1,7 @@
 export const BRAND = "Sakhi Beauty Parlour & Services";
 export const ADDRESS = "Spanish Villa, Chinchoti, Naigaon East";
 
-export const PHONE_DISPLAY = "+91 9167 526063";
+export const PHONE_DISPLAY = "+91 91675 26063";
 export const PHONE_TEL = "+919167526063";
 export const WHATSAPP_NUMBER = "919167526063";
 
